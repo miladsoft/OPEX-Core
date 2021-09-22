@@ -3,4 +3,5 @@ VOLUME /tmp
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 COPY target/classes/opex-master-realm.json opex-master-realm.json
+ADD src/main/resources/themes.tar.gz themes
 ENTRYPOINT ["sh", "-c", "java ${JAVA_OPTS} -jar /app.jar"]
